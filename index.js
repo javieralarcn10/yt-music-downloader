@@ -19,7 +19,7 @@ app.get('/:texto', async function(req, res) {
         const channel = data(elem).find('.yt-lockup-byline').children('a').text().trim();
         const img = data(elem).find('.yt-uix-tile-link').attr('href').substring(9, 20);
         const img_url = `http://img.youtube.com/vi/${img}/hqdefault.jpg`;
-        const download = 'http://localhost:3001/download/' + img
+        const download = 'http://localhost:3000/download/' + img
         lista.push({ title: title, url: url, channel: channel, img: img_url, download: download });
     });
     const listaa = lista.filter(item => {
