@@ -23,7 +23,7 @@ app.get('/:texto', async function(req, res) {
         lista.push({ title: title, url: url, channel: channel, img: img_url, download: download });
     });
     const listaa = lista.filter(item => {
-        return item.url.includes('watch')
+        return !item.url.includes('start_radio') && !item.url.includes('channel') && !item.url.includes('user')
     });
     res.send(listaa)
 
